@@ -63,8 +63,8 @@
 
 .submit {
   border: none;
-  background: linear-gradient(120deg, #1fa19c, #2cc8c1);
-  color: white;
+  background: linear-gradient(120deg, var(--primary), var(--accent));
+  color: #0b1220;
   font-weight: 800;
   padding: 10px 14px;
   border-radius: 12px;

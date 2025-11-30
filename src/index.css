@@ -1,25 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Space Grotesk', 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  color: #1f2933;
-  background-color: #f6f7fb;
-  --bg: #f6f7fb;
+  color: #1f2937;
+  background-color: #f6fffb;
+
+  --bg: radial-gradient(circle at 20% 20%, #f7fffb, #edfff6 45%, #e6f8ef 90%);
   --surface: #ffffff;
-  --text: #1f2933;
-  --text-strong: #0f172a;
-  --muted: #5f6b7a;
-  --muted-strong: #344050;
-  --primary: #1fa19c;
-  --primary-strong: #17867f;
-  --border: #e5e7eb;
-  --border-strong: #d5d8df;
+  --surface-strong: #ffffff;
+  --text: #0f172a;
+  --text-strong: #0a0f1c;
+  --muted: #52606d;
+  --muted-strong: #27303d;
+  --primary: #0ea854;
+  --primary-strong: #0d8f48;
+  --accent: #7cd87f;
+  --border: rgba(12, 23, 54, 0.08);
+  --border-strong: rgba(12, 23, 54, 0.16);
   --success: #16a34a;
   --danger: #e11d48;
-  --shadow-soft: 0 14px 40px rgba(12, 23, 54, 0.08);
-  --shadow-hover: 0 18px 48px rgba(12, 23, 54, 0.12);
+  --shadow-soft: 0 18px 48px rgba(12, 23, 54, 0.08);
+  --shadow-hover: 0 24px 64px rgba(12, 23, 54, 0.12);
+  --glow: 0 0 24px rgba(14, 168, 84, 0.25);
 }
 
 *,
@@ -35,6 +39,7 @@ body {
   color: var(--text);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  transition: background 0.4s ease, color 0.2s ease;
 }
 
 a {
@@ -54,6 +59,6 @@ textarea {
 }
 
 ::selection {
-  background: rgba(31, 161, 156, 0.16);
+  background: rgba(249, 115, 22, 0.15);
   color: var(--text-strong);
 }

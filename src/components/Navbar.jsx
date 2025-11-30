@@ -28,15 +28,15 @@ function Navbar() {
         </button>
         <nav className={`${styles.links} ${open ? styles.linksOpen : ''}`}>
           {links.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
-              onClick={closeMenu}
-            >
-              {link.label}
-            </NavLink>
-          ))}
+          <NavLink
+            key={link.to}
+            to={link.to}
+            className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
+            onClick={closeMenu}
+          >
+            {link.label}
+          </NavLink>
+        ))}
         </nav>
       </div>
     </header>

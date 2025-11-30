@@ -1,6 +1,7 @@
 .app-shell {
   background: var(--bg);
   min-height: 100vh;
+  transition: background 0.4s ease;
 }
 
 .content-area {
@@ -31,6 +32,7 @@
 .card-surface {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 18px;
   box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(6px);
 }

@@ -2,9 +2,10 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--surface);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
 }
 
 .navInner {
@@ -25,11 +26,11 @@
 }
 
 .logoMark {
-  width: 12px;
-  height: 28px;
-  background: linear-gradient(160deg, var(--primary), #2fc9c2);
-  border-radius: 8px;
-  box-shadow: 0 8px 18px rgba(31, 161, 156, 0.35);
+  width: 14px;
+  height: 32px;
+  background: linear-gradient(160deg, var(--primary), var(--accent));
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25), var(--glow);
 }
 
 .logoText {
@@ -48,6 +49,7 @@
   color: var(--text);
   cursor: pointer;
   transition: border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: var(--shadow-soft);
 }
 
 .menuButton:hover {
@@ -71,15 +73,15 @@
 }
 
 .link:hover {
-  background: rgba(31, 161, 156, 0.08);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--text-strong);
   transform: translateY(-1px);
 }
 
 .active {
-  background: rgba(31, 161, 156, 0.12);
-  color: var(--primary-strong);
-  box-shadow: inset 0 0 0 1px rgba(31, 161, 156, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-strong);
+  box-shadow: inset 0 0 0 1px var(--border-strong);
 }
 
 @media (max-width: 768px) {
