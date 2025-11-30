@@ -1,0 +1,134 @@
+.panel {
+  padding: 18px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 700;
+  color: var(--text-strong);
+  font-size: 16px;
+}
+
+.pill {
+  padding: 6px 10px;
+  background: rgba(31, 161, 156, 0.1);
+  color: var(--primary-strong);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.emptyState {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.errorRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(225, 29, 72, 0.08);
+  color: var(--danger);
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.spellRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(31, 161, 156, 0.08);
+  border-radius: 12px;
+  border: 1px dashed rgba(31, 161, 156, 0.3);
+}
+
+.spellIcon {
+  color: var(--primary);
+}
+
+.spellText {
+  color: var(--muted-strong);
+}
+
+.spellButton {
+  border: none;
+  background: transparent;
+  color: var(--primary-strong);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(31, 161, 156, 0.3);
+}
+
+.itemLeft {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.itemIcon {
+  color: var(--primary);
+}
+
+.word {
+  font-weight: 700;
+  color: var(--text-strong);
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}
+
+.badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: #f3f5f9;
+  color: var(--muted-strong);
+  font-weight: 600;
+  font-size: 13px;
+}

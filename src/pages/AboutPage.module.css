@@ -1,0 +1,50 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.introCard {
+  padding: 18px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.introHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.detailBlock {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #f8fafc;
+}
+
+.icon {
+  color: var(--primary);
+  margin-top: 4px;
+}
+
+.detailLabel {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.detailValue {
+  margin: 2px 0 0;
+  color: var(--text-strong);
+}

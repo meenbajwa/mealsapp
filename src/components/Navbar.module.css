@@ -1,0 +1,115 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-strong);
+  cursor: pointer;
+}
+
+.logoMark {
+  width: 12px;
+  height: 28px;
+  background: linear-gradient(160deg, var(--primary), #2fc9c2);
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(31, 161, 156, 0.35);
+}
+
+.logoText {
+  letter-spacing: 0.3px;
+}
+
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.menuButton:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.link {
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: var(--muted-strong);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.link:hover {
+  background: rgba(31, 161, 156, 0.08);
+  color: var(--text-strong);
+  transform: translateY(-1px);
+}
+
+.active {
+  background: rgba(31, 161, 156, 0.12);
+  color: var(--primary-strong);
+  box-shadow: inset 0 0 0 1px rgba(31, 161, 156, 0.2);
+}
+
+@media (max-width: 768px) {
+  .menuButton {
+    display: inline-flex;
+  }
+
+  .links {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .linksOpen {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .link {
+    width: 100%;
+    padding: 12px 14px;
+  }
+}

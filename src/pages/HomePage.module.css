@@ -1,0 +1,161 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  padding: 24px;
+  background: radial-gradient(circle at 20% 20%, rgba(31, 161, 156, 0.08), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(47, 201, 194, 0.12), transparent 38%),
+    var(--surface);
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(31, 161, 156, 0.12);
+  color: var(--primary-strong);
+  font-weight: 700;
+  width: fit-content;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.15;
+  color: var(--text-strong);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  max-width: 640px;
+}
+
+.heroMeta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--muted-strong);
+  font-weight: 600;
+}
+
+.heroMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f0f5f8;
+  border-radius: 12px;
+}
+
+.heroVisual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroBubble {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  background: #eefaf8;
+  color: #0f766e;
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+.heroBubble span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 22px;
+}
+
+.heroCard {
+  position: absolute;
+  bottom: 12px;
+  right: -10px;
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-hover);
+  min-width: 170px;
+}
+
+.heroCardTitle {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.heroStats {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.heroStatNumber {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary-strong);
+}
+
+.heroStatLabel {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .heroVisual {
+    justify-content: flex-start;
+  }
+}

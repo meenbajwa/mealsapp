@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #1f2933;
+  background-color: #f6f7fb;
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --text-strong: #0f172a;
+  --muted: #5f6b7a;
+  --muted-strong: #344050;
+  --primary: #1fa19c;
+  --primary-strong: #17867f;
+  --border: #e5e7eb;
+  --border-strong: #d5d8df;
+  --success: #16a34a;
+  --danger: #e11d48;
+  --shadow-soft: 0 14px 40px rgba(12, 23, 54, 0.08);
+  --shadow-hover: 0 18px 48px rgba(12, 23, 54, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+::selection {
+  background: rgba(31, 161, 156, 0.16);
+  color: var(--text-strong);
+}
