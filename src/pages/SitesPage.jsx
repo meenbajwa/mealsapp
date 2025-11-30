@@ -20,6 +20,7 @@ function SitesPage() {
     { key: 'dinnerly', name: 'Dinnerly', patterns: ['dinnerly'] },
     { key: 'blueapron', name: 'Blue Apron', patterns: ['blueapron', 'blue-apron', 'blue apron'] },
     { key: 'makegood', name: 'MakeGood', patterns: ['makegood', 'make-good', 'make good', 'makeforgood', 'make-for-good'] },
+    { key: 'goodfood', name: 'Goodfood', patterns: ['goodfood', 'good-food', 'good food'] },
   ]
 
   const normalizeKey = (value = '') => value.toString().toLowerCase().replace(/[^a-z0-9]/g, '')

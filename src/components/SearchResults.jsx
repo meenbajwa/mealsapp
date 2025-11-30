@@ -4,6 +4,7 @@ import dinnerlyLogo from '../assets/logos/Dinnerly-Logo-e1659897424142.png'
 import helloFreshLogo from '../assets/logos/Hello_Fresh_Lockup.webp'
 import blueApronLogo from '../assets/logos/Blue_Apron_logo.svg.png'
 import makeGoodLogo from '../assets/logos/gc_lg.avif'
+import goodfoodLogo from '../assets/logos/0x0.png'
 import styles from './SearchResults.module.css'
 
 const pick = (obj, keys) => keys.map((k) => obj?.[k]).find(Boolean)
@@ -23,6 +24,7 @@ const LOGO_MAP = {
   hellofresh: helloFreshLogo,
   blueapron: blueApronLogo,
   makegood: makeGoodLogo,
+  goodfood: goodfoodLogo,
 }
 
 const normalizeKey = (value = '') => value.toString().toLowerCase().replace(/[^a-z0-9]/g, '')
