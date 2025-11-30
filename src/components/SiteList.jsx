@@ -3,7 +3,7 @@ import greenChefLogo from '../assets/logos/gc_lg.avif'
 import dinnerlyLogo from '../assets/logos/Dinnerly-Logo-e1659897424142.png'
 import helloFreshLogo from '../assets/logos/Hello_Fresh_Lockup.webp'
 import blueApronLogo from '../assets/logos/Blue_Apron_logo.svg.png'
-import goodfoodLogo from '../assets/logos/0x0.png'
+import goodfoodLogo from '../assets/logos/goodfood.png'
 import styles from './SiteList.module.css'
 
 const LOGO_MAP = {
@@ -12,6 +12,8 @@ const LOGO_MAP = {
   hellofresh: helloFreshLogo,
   blueapron: blueApronLogo,
   goodfood: goodfoodLogo,
+  makegoodfood: goodfoodLogo,
+  makegood: goodfoodLogo,
 }
 
 const normalizeKey = (value = '') => value.toString().toLowerCase().replace(/[^a-z0-9]/g, '')

@@ -19,7 +19,11 @@ function SitesPage() {
     { key: 'greenchef', name: 'GreenChef', patterns: ['greenchef', 'green-chef', 'green chef'] },
     { key: 'dinnerly', name: 'Dinnerly', patterns: ['dinnerly'] },
     { key: 'blueapron', name: 'Blue Apron', patterns: ['blueapron', 'blue-apron', 'blue apron'] },
-    { key: 'makegood', name: 'MakeGood', patterns: ['makegood', 'make-good', 'make good', 'makeforgood', 'make-for-good'] },
+    {
+      key: 'makegoodfood',
+      name: 'MakeGoodFood',
+      patterns: ['makegoodfood', 'make-good-food', 'make good food', 'makeforgood', 'make-for-good', 'makegood'],
+    },
     { key: 'goodfood', name: 'Goodfood', patterns: ['goodfood', 'good-food', 'good food'] },
   ]
 

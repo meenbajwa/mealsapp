@@ -3,8 +3,7 @@ import greenChefLogo from '../assets/logos/gc_lg.avif'
 import dinnerlyLogo from '../assets/logos/Dinnerly-Logo-e1659897424142.png'
 import helloFreshLogo from '../assets/logos/Hello_Fresh_Lockup.webp'
 import blueApronLogo from '../assets/logos/Blue_Apron_logo.svg.png'
-import makeGoodLogo from '../assets/logos/gc_lg.avif'
-import goodfoodLogo from '../assets/logos/0x0.png'
+import goodfoodLogo from '../assets/logos/goodfood.png'
 import styles from './SearchResults.module.css'
 
 const pick = (obj, keys) => keys.map((k) => obj?.[k]).find(Boolean)
@@ -23,15 +22,28 @@ const LOGO_MAP = {
   dinnerly: dinnerlyLogo,
   hellofresh: helloFreshLogo,
   blueapron: blueApronLogo,
-  makegood: makeGoodLogo,
   goodfood: goodfoodLogo,
+  goodfoodmarket: goodfoodLogo,
+  makegood: goodfoodLogo,
+  makegoodfood: goodfoodLogo,
+  makeforgood: goodfoodLogo,
+  makeforgoodfood: goodfoodLogo,
 }
 
 const normalizeKey = (value = '') => value.toString().toLowerCase().replace(/[^a-z0-9]/g, '')
 
 const getLogo = (item) => {
   const site = pick(item, ['siteName', 'site', 'domain']) || ''
-  return LOGO_MAP[normalizeKey(site)]
+  const host = formatHost(pick(item, ['sourcePage', 'url', 'link']))
+  const keyFromSite = normalizeKey(site)
+  const keyFromHost = normalizeKey(host)
+
+  const mapHit = LOGO_MAP[keyFromSite] || LOGO_MAP[keyFromHost]
+  if (mapHit) return mapHit
+
+  const combined = `${keyFromSite} ${keyFromHost}`
+  if (combined.includes('goodfood') || combined.includes('makegood')) return goodfoodLogo
+  return null
 }
 
 function SearchResults({ results = [], loading, error }) {
@@ -73,11 +85,6 @@ function SearchResults({ results = [], loading, error }) {
               <article key={item.id || item.word || idx} className={styles.item}>
                 <div className={styles.itemTop}>
                   <div className={styles.itemMain}>
-                    {logo && (
-                      <div className={styles.logoWrap}>
-                        <img src={logo} alt={`${site || 'Site'} logo`} />
-                      </div>
-                    )}
                     <h4 className={styles.itemTitle}>{title}</h4>
                     {description && <p className={styles.itemDesc}>{description}</p>}
                   </div>
@@ -104,6 +111,11 @@ function SearchResults({ results = [], loading, error }) {
                     </a>
                   )}
                 </div>
+                {logo && (
+                  <div className={styles.logoWrap} aria-hidden="true">
+                    <img src={logo} alt={`${site || 'Site'} logo`} />
+                  </div>
+                )}
               </article>
             )
           })}

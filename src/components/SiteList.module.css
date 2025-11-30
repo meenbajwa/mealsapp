@@ -39,7 +39,7 @@
 
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 12px;
 }
 
@@ -56,6 +56,8 @@
   cursor: pointer;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
   text-align: left;
+  min-height: 320px;
+  justify-content: space-between;
 }
 
 .item:hover {
@@ -86,7 +88,7 @@
   border-radius: 12px;
   overflow: hidden;
   background: #e8f1f3;
-  min-height: 120px;
+  min-height: 180px;
   display: grid;
   place-items: center;
 }
@@ -96,7 +98,8 @@
   height: 100%;
   object-fit: contain;
   background: white;
-  padding: 12px;
+  padding: 16px;
+  max-height: 180px;
 }
 
 .imageFallback {

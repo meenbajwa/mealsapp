@@ -67,6 +67,8 @@
   border: 1px solid var(--border);
   background: linear-gradient(180deg, #f9fbff 0%, #f6fbf8 100%);
   box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
 }
 
 .itemTop {
@@ -76,21 +78,20 @@
   gap: 10px;
 }
 
-.itemMain {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
 .logoWrap {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   width: 44px;
   height: 44px;
   border-radius: 12px;
   background: #fff;
   border: 1px solid var(--border);
-  overflow: hidden;
+  box-shadow: var(--shadow-soft);
   display: grid;
   place-items: center;
+  padding: 6px;
+  opacity: 0.9;
 }
 
 .logoWrap img {
@@ -149,6 +150,7 @@
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+  padding-right: 60px;
 }
 
 .host {
@@ -166,6 +168,8 @@
   gap: 6px;
   font-weight: 700;
   color: var(--primary-strong);
+  word-break: break-all;
+  max-width: 100%;
 }
 
 .source:hover {
