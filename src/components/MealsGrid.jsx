@@ -1,4 +1,4 @@
-import { FiGrid, FiTag } from 'react-icons/fi'
+import { FiGrid, FiTag, FiGlobe } from 'react-icons/fi'
 import styles from './MealsGrid.module.css'
 
 function MealsGrid({ meals, loading, error, siteName }) {
@@ -16,25 +16,36 @@ function MealsGrid({ meals, loading, error, siteName }) {
         <p className={styles.empty}>Select a site to load its meals.</p>
       )}
       <div className={styles.grid}>
-        {meals.map((meal) => (
-          <article key={meal.id} className={styles.cardItem}>
-            <div className={styles.cardHeader}>
-              <h3 className={styles.mealTitle}>{meal.title}</h3>
-              {meal.category && (
-                <span className={styles.category}>
-                  <FiTag />
-                  {meal.category}
-                </span>
+        {meals.map((meal) => {
+          const key = meal.id ? `${meal.siteId || 'site'}-${meal.id}` : `${meal.siteId || 'site'}-${meal.title}`
+          return (
+            <article key={key} className={styles.cardItem}>
+              <div className={styles.cardHeader}>
+                <h3 className={styles.mealTitle}>{meal.title}</h3>
+                <div className={styles.pills}>
+                  {meal.siteName && (
+                    <span className={styles.site}>
+                      <FiGlobe />
+                      {meal.siteName}
+                    </span>
+                  )}
+                  {meal.category && (
+                    <span className={styles.category}>
+                      <FiTag />
+                      {meal.category}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <p className={styles.description}>{meal.description}</p>
+              {meal.sourcePage && (
+                <a className={styles.source} href={meal.sourcePage} target="_blank" rel="noreferrer">
+                  View source
+                </a>
               )}
-            </div>
-            <p className={styles.description}>{meal.description}</p>
-            {meal.sourcePage && (
-              <a className={styles.source} href={meal.sourcePage} target="_blank" rel="noreferrer">
-                View source
-              </a>
-            )}
-          </article>
-        ))}
+            </article>
+          )
+        })}
       </div>
     </div>
   )

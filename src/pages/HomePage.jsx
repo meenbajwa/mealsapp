@@ -7,6 +7,7 @@ import { getSuggestions } from '../api/searchApi.js'
 import styles from './HomePage.module.css'
 
 const DEBOUNCE_MS = 450
+const MIN_QUERY_LENGTH = 2
 
 function HomePage() {
   const [query, setQuery] = useState('')
@@ -16,17 +17,30 @@ function HomePage() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    if (!query.trim()) {
+    const trimmedQuery = query.trim()
+
+    if (!trimmedQuery) {
       setSuggestions([])
       setSpellCheck(null)
       setError('')
+      setLoading(false)
       return undefined
     }
+
+    if (trimmedQuery.length < MIN_QUERY_LENGTH) {
+      setSuggestions([])
+      setSpellCheck(null)
+      setError(`Enter at least ${MIN_QUERY_LENGTH} characters to search.`)
+      setLoading(false)
+      return undefined
+    }
+
+    setError('')
 
     const handle = setTimeout(async () => {
       try {
         setLoading(true)
-        const data = await getSuggestions(query.trim())
+        const data = await getSuggestions(trimmedQuery)
         setSuggestions(data?.suggestions || [])
         setSpellCheck(data?.spellCheck || null)
         setError('')

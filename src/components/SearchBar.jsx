@@ -15,6 +15,7 @@ function SearchBar({ value, onChange, placeholder = 'Search for paneer, dal, par
           onChange={(e) => onChange(e.target.value)}
           className={styles.input}
           placeholder={placeholder}
+          minLength={2}
           aria-label="Search for meals"
         />
       </div>
