@@ -1,0 +1,243 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 20% 20%, #e9f6ff, #f5fbf8 45%, #eef4ff);
+  border: 1px solid var(--border);
+}
+
+.kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--primary-strong);
+}
+
+.title {
+  margin: 4px 0 6px;
+  font-size: 28px;
+  color: var(--text-strong);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  max-width: 640px;
+}
+
+.accentBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(31, 161, 156, 0.1);
+  color: var(--primary-strong);
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.controlCard {
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #fdfefe;
+  box-shadow: var(--shadow-soft);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputWrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  padding: 14px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 16px;
+  color: var(--text-strong);
+  background: #fff;
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgba(31, 161, 156, 0.5);
+  box-shadow: var(--shadow-soft);
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: linear-gradient(120deg, #1fa19c, #2cc8c1);
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submit:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--danger-strong, #c53030);
+  background: rgba(197, 48, 48, 0.08);
+  border: 1px solid rgba(197, 48, 48, 0.25);
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.resultsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.resultCard {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #f8fbfd;
+  box-shadow: var(--shadow-soft);
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.count {
+  background: rgba(31, 161, 156, 0.12);
+  color: var(--primary-strong);
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.empty {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.itemText {
+  word-break: break-all;
+  color: var(--text-strong);
+}
+
+.copyButton {
+  border: none;
+  background: rgba(31, 161, 156, 0.1);
+  color: var(--primary-strong);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.copyButton:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+.placeholder {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .inputWrap {
+    flex-direction: column;
+  }
+
+  .submit {
+    width: 100%;
+    justify-content: center;
+  }
+}

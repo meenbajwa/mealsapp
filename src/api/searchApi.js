@@ -11,6 +11,16 @@ export async function getSuggestions(query) {
   return response.data
 }
 
+export async function getSearchResults(query) {
+  if (!query || !query.trim()) {
+    return []
+  }
+  const response = await client.get('/api/search/results', {
+    params: { query },
+  })
+  return response.data
+}
+
 export async function getTopSearches() {
   const response = await client.get('/api/search/top')
   return response.data

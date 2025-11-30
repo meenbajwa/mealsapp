@@ -1,0 +1,57 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #f6fbf9, #f1f6ff);
+  border: 1px solid var(--border);
+  align-items: center;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--muted-strong);
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  color: var(--text-strong);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+.searchBox {
+  min-width: 320px;
+  flex: 1;
+}
+
+@media (max-width: 720px) {
+  .searchBox {
+    width: 100%;
+  }
+}

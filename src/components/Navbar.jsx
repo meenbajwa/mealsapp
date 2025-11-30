@@ -5,6 +5,7 @@ import styles from './Navbar.module.css'
 
 const links = [
   { to: '/', label: 'Home' },
+  { to: '/crawler', label: 'Crawler' },
   { to: '/sites', label: 'Food Meal Sites' },
   { to: '/about', label: 'About Us' },
 ]

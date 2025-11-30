@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { FiSunrise, FiShield, FiTrendingUp } from 'react-icons/fi'
+import { useNavigate } from 'react-router-dom'
 import SearchBar from '../components/SearchBar.jsx'
 import SuggestionsPanel from '../components/SuggestionsPanel.jsx'
 import TopSearches from '../components/TopSearches.jsx'
@@ -10,6 +11,7 @@ const DEBOUNCE_MS = 450
 const MIN_QUERY_LENGTH = 2
 
 function HomePage() {
+  const navigate = useNavigate()
   const [query, setQuery] = useState('')
   const [suggestions, setSuggestions] = useState([])
   const [spellCheck, setSpellCheck] = useState(null)
@@ -55,7 +57,20 @@ function HomePage() {
   }, [query])
 
   const applySuggestion = (value) => {
-    setQuery(value)
+    const trimmed = (value || '').trim()
+    setQuery(trimmed)
+    if (trimmed.length >= MIN_QUERY_LENGTH) {
+      navigate(`/search?q=${encodeURIComponent(trimmed)}`)
+    }
+  }
+
+  const submitSearch = (value) => {
+    const trimmed = (value || '').trim()
+    if (!trimmed || trimmed.length < MIN_QUERY_LENGTH) {
+      setError(`Enter at least ${MIN_QUERY_LENGTH} characters to search.`)
+      return
+    }
+    navigate(`/search?q=${encodeURIComponent(trimmed)}`)
   }
 
   return (
@@ -104,7 +119,7 @@ function HomePage() {
 
       <section className={styles.layout}>
         <div className={styles.left}>
-          <SearchBar value={query} onChange={setQuery} />
+          <SearchBar value={query} onChange={setQuery} onSubmit={submitSearch} />
           <SuggestionsPanel
             loading={loading}
             spellCheck={spellCheck}
