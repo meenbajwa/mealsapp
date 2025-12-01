@@ -19,7 +19,7 @@ function AboutPage() {
             <FiUsers className={styles.icon} />
             <div>
               <p className={styles.detailLabel}>Course</p>
-              <p className={styles.detailValue}>Advanced Web Development</p>
+              <p className={styles.detailValue}>Advanced Computing Concepts</p>
             </div>
           </div>
           <div className={styles.detailBlock}>

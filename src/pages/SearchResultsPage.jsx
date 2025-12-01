@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { FiSearch } from 'react-icons/fi'
 import SearchResults from '../components/SearchResults.jsx'
 import SearchBar from '../components/SearchBar.jsx'
-import { getSearchResults, recordSearchHit } from '../api/searchApi.js'
+import { getSearchResults } from '../api/searchApi.js'
 import styles from './SearchResultsPage.module.css'
 
 const MIN_QUERY_LENGTH = 2
@@ -49,7 +49,6 @@ function SearchResultsPage() {
   const goSearch = (value) => {
     const trimmed = (value || '').trim()
     if (!trimmed) return
-    recordSearchHit(trimmed).catch(() => {})
     navigate(`/search?q=${encodeURIComponent(trimmed)}`)
   }
 

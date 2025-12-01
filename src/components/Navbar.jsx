@@ -20,7 +20,6 @@ function Navbar() {
     <header className={styles.navbar}>
       <div className={`container ${styles.navInner}`}>
         <div className={styles.brand} onClick={closeMenu}>
-          <div className={styles.logoMark} />
           <span className={styles.logoText}>MealScout</span>
         </div>
         <button className={styles.menuButton} onClick={toggleMenu} aria-label="Toggle navigation">

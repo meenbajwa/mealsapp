@@ -111,7 +111,8 @@ function SitesPage() {
     const map = new Map()
     list.forEach((site) => {
       const { key, name } = getCanonicalInfo(site)
-      if (!key || !name) return
+      const lowered = name.toLowerCase()
+      if (!key || !name || lowered === 'unnamed site' || lowered === 'unknown') return
 
       if (!map.has(key)) {
         map.set(key, {

@@ -56,7 +56,7 @@ function HomePage() {
     return () => clearTimeout(handle)
   }, [query])
 
-  const applySuggestion = (value) => {
+  const handleSuggestionClick = (value) => {
     const trimmed = (value || '').trim()
     setQuery(trimmed)
     if (trimmed.length >= MIN_QUERY_LENGTH) {
@@ -71,7 +71,6 @@ function HomePage() {
       setError(`Enter at least ${MIN_QUERY_LENGTH} characters to search.`)
       return
     }
-    recordSearchHit(trimmed).catch(() => {})
     navigate(`/search?q=${encodeURIComponent(trimmed)}`)
   }
 
@@ -128,12 +127,12 @@ function HomePage() {
             suggestions={suggestions}
             query={query}
             error={error}
-            onApplySpell={applySuggestion}
-            onSelectSuggestion={applySuggestion}
+            onSelectSuggestion={handleSuggestionClick}
+            onApplySpell={(v) => handleSuggestionClick(v)}
           />
         </div>
         <div className={styles.right}>
-          <TopSearches onSelect={applySuggestion} />
+          <TopSearches onSelect={handleSuggestionClick} />
         </div>
       </section>
     </div>
