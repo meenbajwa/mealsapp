@@ -25,3 +25,13 @@ export async function getTopSearches() {
   const response = await client.get('/api/search/top')
   return response.data
 }
+
+export async function recordSearchHit(query) {
+  const trimmed = query?.trim()
+  if (!trimmed) return null
+  const response = await client.get('/api/search/hit', {
+    params: { query: trimmed },
+    headers: { Accept: 'application/json' },
+  })
+  return response.data
+}

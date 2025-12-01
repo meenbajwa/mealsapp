@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import SearchBar from '../components/SearchBar.jsx'
 import SuggestionsPanel from '../components/SuggestionsPanel.jsx'
 import TopSearches from '../components/TopSearches.jsx'
-import { getSuggestions } from '../api/searchApi.js'
+import { getSuggestions, recordSearchHit } from '../api/searchApi.js'
 import styles from './HomePage.module.css'
 
 const DEBOUNCE_MS = 450
@@ -60,6 +60,7 @@ function HomePage() {
     const trimmed = (value || '').trim()
     setQuery(trimmed)
     if (trimmed.length >= MIN_QUERY_LENGTH) {
+      recordSearchHit(trimmed).catch(() => {})
       navigate(`/search?q=${encodeURIComponent(trimmed)}`)
     }
   }
@@ -70,6 +71,7 @@ function HomePage() {
       setError(`Enter at least ${MIN_QUERY_LENGTH} characters to search.`)
       return
     }
+    recordSearchHit(trimmed).catch(() => {})
     navigate(`/search?q=${encodeURIComponent(trimmed)}`)
   }
 

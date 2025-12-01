@@ -27,6 +27,26 @@
   color: var(--muted);
 }
 
+.secondaryBtn {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #0b1220;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.secondaryBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -89,6 +109,28 @@
   align-items: flex-start;
 }
 
+.phoneRow {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  gap: 10px;
+}
+
+.selectWrapper {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #f8fafc;
+  padding: 10px;
+}
+
+.selectWrapper select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
 .helperRow {
   display: flex;
   justify-content: space-between;
@@ -110,7 +152,7 @@
 .submit {
   align-self: flex-start;
   padding: 12px 18px;
-  background: linear-gradient(135deg, var(--primary), #22c1ba);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   border: none;
   color: #fff;
   font-weight: 700;
@@ -148,4 +190,83 @@
 .errorBox {
   background: rgba(225, 29, 72, 0.12);
   color: var(--danger);
+}
+
+.submissions {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.submissionsHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.submissionsHeader h4 {
+  margin: 0;
+  color: var(--text-strong);
+}
+
+.pill {
+  background: rgba(14, 168, 84, 0.12);
+  color: var(--primary-strong);
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.submissionList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.submissionCard {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.submissionTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.subName {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.subEmail {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.subPhone {
+  background: rgba(14, 168, 84, 0.12);
+  color: var(--primary-strong);
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.subMessage {
+  margin: 10px 0 0;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.empty {
+  color: var(--muted);
+  margin: 0;
 }
